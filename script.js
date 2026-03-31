@@ -507,7 +507,13 @@ function updateCards(data) {
     document.getElementById("presentCount").innerText = present;
     document.getElementById("weekoffCount").innerText = weekoff;
     document.getElementById("paidLeaveCount").innerText = paidLeave;
-    document.getElementById("unpaidLeaveCount").innerText = unpaidLeave;
+    // Adjust unpaid leave by subtracting weekoff working
+    let finalUnpaidLeave = unpaidLeave - weekoffWorking;
+
+    // Prevent negative values
+    if (finalUnpaidLeave < 0) finalUnpaidLeave = 0;
+
+    document.getElementById("unpaidLeaveCount").innerText = finalUnpaidLeave;
     document.getElementById("lateCount").innerText = late;
     document.getElementById("lateDeduction").innerText = lateDeduction.toFixed(1);
     document.getElementById("netPayableDays").innerText = netPayable.toFixed(1);
