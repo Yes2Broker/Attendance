@@ -479,8 +479,10 @@ function updateCards(data) {
     // ===== Late Deduction Logic =====
     let lateDeduction = 0;
 
-    if (late > 2) {
-        lateDeduction = (late - 2) * 0.5;
+    let effectiveLate = late - shortHours; // remove overlap
+
+    if (effectiveLate > 2) {
+        lateDeduction = (effectiveLate - 2) * 0.5;
     }
 
     // ===== Net Payable Formula =====
