@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yes2Broker | Add Attendance</title>
+
+    <link rel="icon" href="Assets/fav.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===== NAVBAR (Same as Dashboard) ===== -->
+        <div class="header">
+
+            <div class="brand">
+                <img src="Assets/logo.webp" />
+            </div>
+
+            <div class="header-right">
+                <div class="nav-actions">
+                    <button onclick="location.href='admin.html'" class="nav-btn">
+                        Dashboard
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ===== Attendance Card ===== -->
+        <div class="ios-card">
+
+            <div class="ios-header">
+                <h2 style="font-weight:600; margin-bottom:5px;">
+                    Add Attendance
+                </h2>
+            </div>
+
+            <form id="attendanceForm">
+
+                <!-- Date -->
+                <div class="ios-group">
+                    <label>Date</label>
+                    <input type="date" id="attDate" required />
+                </div>
+
+                <!-- Employee -->
+                <div class="ios-group">
+                    <label>Employee</label>
+                    <select id="employeeSelect" required>
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+
+                <div class="ios-group">
+                    <label>Status</label>
+                    <select id="attStatus" required>
+                        <option value="">Select Status</option>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Weekoff">Weekoff</option>
+                        <option value="Paid Leave">Paid Leave</option>
+                    </select>
+                </div>
+
+                <!-- In / Out Time -->
+                <div id="timeFields" style="display:none;">
+
+                    <div class="ios-group-grid">
+
+                        <div class="ios-group">
+                            <label>In Time</label>
+                            <input type="time" id="inTime">
+                        </div>
+
+                        <div class="ios-group">
+                            <label>Out Time</label>
+                            <input type="time" id="outTime">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="remarkField" class="ios-group" style="display:none;">
+                    <label>Remark</label>
+                    <input type="text" id="remark" placeholder="Enter leave reason">
+                </div>
+
+                <button type="submit" class="ios-button">
+                    Save Attendance
+                </button>
+
+            </form>
+
+            <div id="successMsg"
+                style="display:none; margin-top:15px; text-align:center; color:#16a34a; font-weight:500;">
+                Attendance Saved Successfully
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
